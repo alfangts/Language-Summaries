@@ -74,6 +74,7 @@ Note: Python indexing begins with 0
         print(foo[0])
         >>>Hello
         ```    
+        Can utilise type-conversion with `list(obj)` constructor
     * Lists can contain items of different types, including other lists
         ```python
         bar = ['List', 3, [0,1,2], 4.57]
@@ -99,15 +100,19 @@ Note: Python indexing begins with 0
         >>>True
         ```
 2) List Functions and Methods
-    * `len()` function returns the number of items in a list
-    * `.append()` method adds an item to the end of a list 
-    * `.insert(index,item)` method inserts an item in the given index
-    * `.index(item)` method finds the first occurence of an item in a list and returns it.
+    * `len(list)` function returns the number of items in a list
+    * `max(list)` function returns list item with max value
+    * `min(list)` function returns list item with min value
+    * `list.append(obj)` method adds an item to the end of a list 
+    * `list.insert(index,obj)` method inserts an item in the given index
+    * `list.index(obj)` method finds the first occurence of an item in a list and returns it.
         If item is not in list, returns `ValueError`
         ```python
         [1,2,3].index(5)
         >>>ValueError: 5 is not in list
         ```
-    
-
+    * `list.count(obj)` method returns count of object occurrence in list
+    * `list.remove(obj)` method removes first occurrence of an object in list
+    * `list.pop(index)` method removes object in index and returns object
+    * `list.reverse()` method reverses order of objects in list
 
