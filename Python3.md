@@ -11,14 +11,16 @@
         print(x)
         >>> 4
         ```
+    * Order of operations follows mathematics; Parenthesis first then multiply/divide
+     and finally addition/subtraction
     
 2. Strings
     * Strings can be manipulated in the following way: 
         ```python
         print('str'*3)
         >>>strstrstr
-        print('str'+' X')
-        >>>str X
+        print('method'+' X')
+        >>>method X
         ```
         Note: it only works with multiplication and addition
     * String formatting with `.format()`
@@ -27,6 +29,11 @@
         oranges = 5
         print('Alice has {} apples and {} oranges'.format(apples,oranges)
         >>>Alice has 10 apples and 5 oranges
+        ```
+    * Strings can also be indexed
+        ```python
+        'python'[3]
+        >>>h
         ```
 3. Boolean
     * Boolean values in Python given by `True` and `False` (Case sensitive)
@@ -50,12 +57,57 @@
         if expression:
            statement
         ```
-    * Boolean operators `and, or, not` can be used to make more complicated conditions
+    * Boolean operators `not, and, or` (in order of precedence) can be used to make more complicated conditions
         ```python
         if requirement1 and requirement2:
           statement
         ```
-    * Order of operations follows mathematics; Parenthesis first then multiply/divide
-     and finally addition/subtraction
-     
+    * `break` ends a while loop prematurely, and `continue` skips the current iteration
+
+## Objects
+Note: Python indexing begins with 0
+####Lists
+1) List Basics
+    * Initialise lists using square brackets and commas to separate items
+        ```python
+        foo = ['Hello','World','!']
+        print(foo[0])
+        >>>Hello
+        ```    
+    * Lists can contain items of different types, including other lists
+        ```python
+        bar = ['List', 3, [0,1,2], 4.57]
+        ```
+    * Replacing items in a list
+        ```python
+        bar = ['0','@','2','D']
+        bar[1] = bar[3]
+        print(bar)
+        >>>['0','D','2','D']
+        ```
+    * Checking if item is in a list
+        ```python
+        foo = ['spam','eggs']
+        print('spam' in foo)
+        >>>True
+        ```
+        Likewise, can use `not` operator similarly
+        ```python
+        print('bacon' not in foo)
+        >>>True
+        print(not 'bacon' in foo)
+        >>>True
+        ```
+2) List Functions and Methods
+    * `len()` function returns the number of items in a list
+    * `.append()` method adds an item to the end of a list 
+    * `.insert(index,item)` method inserts an item in the given index
+    * `.index(item)` method finds the first occurence of an item in a list and returns it.
+        If item is not in list, returns `ValueError`
+        ```python
+        [1,2,3].index(5)
+        >>>ValueError: 5 is not in list
+        ```
+    
+
 
