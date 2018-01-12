@@ -115,4 +115,19 @@ Note: Python indexing begins with 0
     * `list.remove(obj)` method removes first occurrence of an object in list
     * `list.pop(index)` method removes object in index and returns object
     * `list.reverse()` method reverses order of objects in list
+    
+    For more functions and methods, check Python 3 Documentation.
+    
+#### Range
+1) `range(start,stop,step)` creates a range object(not a a list) with `start` as the first element,
+    with `step` in between elements and (`stop`-1) as the upper limit.
+    
+    Note: a range object does not actually contain the sequential elements, merely the information required to form them
+    
+## Creating Functions
+Define functions using the `def` command:
+```python
+def myfunc(arg1,arg2):
+    return arg1+arg2
+```
 
