@@ -6,10 +6,10 @@
     * Floor division and modulo given by ` // ` and ` % `
     * In-place operators such as `+=` and `-=` can be used
         ```python
-        x = 3
-        x += 1
-        print(x)
-        >>> 4
+        >>>x = 3
+        >>>x += 1
+        >>>print(x)
+        4
         ```
     * Order of operations follows mathematics; Parenthesis first then multiply/divide
      and finally addition/subtraction
@@ -17,23 +17,23 @@
 2. Strings
     * Strings can be manipulated in the following way: 
         ```python
-        print('str'*3)
-        >>>strstrstr
-        print('method'+' X')
-        >>>method X
+        >>>print('str'*3)
+        strstrstr
+        >>>print('method'+' X')
+        method X
         ```
         Note: it only works with multiplication and addition
     * String formatting with `.format()`
         ```python
-        apples = 10
-        oranges = 5
-        print('Alice has {} apples and {} oranges'.format(apples,oranges)
-        >>>Alice has 10 apples and 5 oranges
+        >>>apples = 10
+        >>>oranges = 5
+        >>>print('Alice has {} apples and {} oranges'.format(apples,oranges)
+        Alice has 10 apples and 5 oranges
         ```
     * Strings can also be indexed
         ```python
-        'python'[3]
-        >>>h
+        >>>'python'[3]
+        h
         ```
 3. Boolean
     * Boolean values in Python given by `True` and `False` (Case sensitive)
@@ -45,9 +45,9 @@
         Less than or equals to: <=
         
         Example:
-        x = 1
-        1 == x
-        >>>True
+        >>>x = 1
+        >>>1 == x
+        True
         ```
     
 4. Control Structures
@@ -70,9 +70,9 @@ Note: Python indexing begins with 0
 1) List Basics
     * Initialise lists using square brackets and commas to separate items
         ```python
-        foo = ['Hello','World','!']
-        print(foo[0])
-        >>>Hello
+        >>>foo = ['Hello','World','!']
+        >>>print(foo[0])
+        Hello
         ```    
         Can utilise type-conversion with `list(obj)` constructor
     * Lists can contain items of different types, including other lists
@@ -81,23 +81,23 @@ Note: Python indexing begins with 0
         ```
     * Replacing items in a list
         ```python
-        bar = ['0','@','2','D']
-        bar[1] = bar[3]
-        print(bar)
-        >>>['0','D','2','D']
+        >>>bar = ['0','@','2','D']
+        >>>bar[1] = bar[3]
+        >>>print(bar)
+        ['0','D','2','D']
         ```
     * Checking if item is in a list
         ```python
-        foo = ['spam','eggs']
-        print('spam' in foo)
-        >>>True
+        >>>foo = ['spam','eggs']
+        >>>print('spam' in foo)
+        True
         ```
         Likewise, can use `not` operator similarly
         ```python
-        print('bacon' not in foo)
-        >>>True
-        print(not 'bacon' in foo)
-        >>>True
+        >>>print('bacon' not in foo)
+        True
+        >>>print(not 'bacon' in foo)
+        True
         ```
 2) List Functions and Methods
     * `len(list)` function returns the number of items in a list
@@ -108,8 +108,8 @@ Note: Python indexing begins with 0
     * `list.index(obj)` method finds the first occurence of an item in a list and returns it.
         If item is not in list, returns `ValueError`
         ```python
-        [1,2,3].index(5)
-        >>>ValueError: 5 is not in list
+        >>>[1,2,3].index(5)
+        ValueError: 5 is not in list
         ```
     * `list.count(obj)` method returns count of object occurrence in list
     * `list.remove(obj)` method removes first occurrence of an object in list
@@ -128,6 +128,28 @@ Note: Python indexing begins with 0
 Define functions using the `def` command:
 ```python
 def myfunc(arg1,arg2):
+    """ (float, float) -> float
+    description
+    
+    example entry
+    >>>example result
+    """
     return arg1+arg2
+```
+The text bounded by `"""` is known as the docstring. It is used to explain what the function does and how to use it.
+
+## Modules
+Import modules using the `import` command at the beginning of the code
+```python
+>>>import random as rand
+>>>print(rand.randint(1,6))
+3
+```
+
+Can also import specific functions using `from`
+```python
+>>>from math import sqrt,pi
+>>>sqrt(pi**2)
+3.141592653589793
 ```
 
