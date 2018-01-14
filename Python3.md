@@ -193,4 +193,35 @@ Error
 ZeroDivisionError: division by zero
 ```
 
-## Assertions
+## File Handling
+#### Opening & Closing
+For straightforward text files, use `open` function to create a file object containing data required
+```python
+myfile = open('file.txt','rb')
+filetext = myfile.read(bytes)
+print(filetext)
+finally:
+    myfile.close()
+```
+The second argument is a modifier to the function specifying what mode the file is opened in:
+* `r` is read mode
+* `w` is write mode
+* `a` is append mode
+* `b` is binary mode
+
+Can also use `with open('file.txt','rb') as myfile:`, file will automatically close at end of `with` block.
+Note: `myfile` is only accessible within `with` block using this method
+
+#### File methods
+- `.read(bytes)` method reads the file object to a specified number of bytes. (0 == entire file)
+- `.readlines()` method returns a list of strings with each element being a line in the text file
+- `.write(string)` method writes a string to the text file, and returns the number of bytes if successful
+    ```python
+    >>>msgbytes = file.write('Hello World!)
+    >>>print(msgbytes)
+    12
+    ```
+- `.close()` method closes the file object to free up memory.
+
+
+
