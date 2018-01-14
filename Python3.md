@@ -153,3 +153,44 @@ Can also import specific functions using `from`
 3.141592653589793
 ```
 
+## Exception Handling
+Exceptions occur when something goes wrong, either due to incorrect code or input.
+Can use `try/except` to handle exceptions
+```python
+try:
+    num1 = 7
+    num2 = 0
+    print(num1/num2)
+except ZeroDivisionError
+    print('Error: Division by zero not allowed') 
+except (ValueError,TypeError):
+    print('Error: Invalid input')
+finally:
+    print('This will always print, even if an uncaught error occurs')
+```
+Refer to Standard Library for types of errors, or module documentation for module-specific ones.
+Try not to use a general `except` statement, it does not give useful information for debugging.
+
+Also, `finally` can be used to ensure a block of code runs no matter what error occurs.
+
+Errors can be raised using the `raise` function
+```python
+>>>print('1')
+>>>raise ValueError('Invalid value!')
+>>>print('2')
+1
+ValueError: Invalid value!
+```
+
+Can also use `raise` to re-raise any errors that occur.
+```python
+>>>try:
+>>>    7/0
+>>>except:
+>>>    print('Error')
+>>>    raise
+Error
+ZeroDivisionError: division by zero
+```
+
+## Assertions
