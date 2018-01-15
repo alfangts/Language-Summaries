@@ -119,8 +119,29 @@ Note: Python indexing begins with 0
     For more functions and methods, check Python 3 Documentation.
 
 3) List slicing
+    * Can create new list from existing one using list slicing
+    ```python
+    >>>numbers = [1,3,5,2,6,7,2,3]
+    >>>mylist = numbers[0:3]
+    >>>print(mylist)
+    [1,3,5]
+    ```
     
-
+    * `list[start:stop:step]` takes every index with `step` from `start`, ending at `stop - 1` or earlier.
+    
+4) List Comprehensions
+    * Quick way to create lists with elements that obey a simple rule
+    ```python
+    >>>newList = [i*3 for i in range(5)]
+    >>>print(newList)
+    [0,3,6,9,12]
+    ```
+    Can also use conditions
+    ```python
+    >>>newList = [i for i in range(15) if i%3==0]
+    [0,3,6,9,12]
+    ```
+    
 #### Dictionaries
 1) Dictionary basics
     * Dictionaries contain values mapped to keys, indexed similarly to lists
