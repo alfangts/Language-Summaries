@@ -117,6 +117,37 @@ Note: Python indexing begins with 0
     * `list.reverse()` method reverses order of objects in list
     
     For more functions and methods, check Python 3 Documentation.
+
+3) List slicing
+    
+
+#### Dictionaries
+1) Dictionary basics
+    * Dictionaries contain values mapped to keys, indexed similarly to lists
+    ```python
+    >>>myDict = {'Dave':12, 'Sally':29}
+    >>>print(myDict['Dave'])
+    12
+    ```
+    Indexing a key that is not in a dictionary returns `KeyError`
+    * Assign new keys to a dictionary using `myDict[key]=value`
+    * Dictionaries keys must be immutable objects
+    * Like lists, can check if key exists in dictionary using `in` and `not in`
+    
+2) Dictionary methods
+    * `mydict.get(key,object)` returns corresponding value if `key` in `mydict`, else returns object (`None` by default)
+    
+    For more functions and methods, check Python 3 Documentation
+    
+#### Tuples
+1) Tuples basics
+    * Tuples are immutable lists and cannot be assigned new values once initialised
+    ```python
+    myTuple = ('spam','eggs','bacon')
+    myTuple[1] = 'cheese'
+    >>> TypeError: 'tuple' object does not support item assignment
+    ```
+    
     
 #### Range
 1) `range(start,stop,step)` creates a range object(not a a list) with `start` as the first element,
@@ -136,6 +167,7 @@ def myfunc(arg1,arg2):
     """
     return arg1+arg2
 ```
+If `return` is not used to explicitly return an object, function returns `None`, which is the lack of a value, by default.
 The text bounded by `"""` is known as the docstring. It is used to explain what the function does and how to use it.
 
 ## Modules
