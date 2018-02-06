@@ -27,8 +27,13 @@
         ```python
         >>>apples = 10
         >>>oranges = 5
-        >>>print('Alice has {} apples and {} oranges'.format(apples,oranges)
+        >>>print('Alice has {} apples and {} oranges'.format(apples,oranges))
         Alice has 10 apples and 5 oranges
+        ```
+        Can also name arguments:
+        ```python
+        >>>print('Bob has {x} melons and {y} bananas'.format(x=2,y=10))
+        Bob has 2 melons and 10 bananas
         ```
     * Strings can also be indexed
         ```python
@@ -63,7 +68,21 @@
           statement
         ```
     * `break` ends a while loop prematurely, and `continue` skips the current iteration
-
+    
+    * `any` and `all` take a list as an argument and return `True` if conditions are met, very useful for control statements
+    ```python
+    >>>nums = [6,10,21,44,50]
+    >>> if all([i > 5 for i in nums]):
+    >>>    statement
+ 
+    >>> if any([i%2 == 0 for i in nums]):
+    >>>    statement
+    ```
+    * `enumerate` function can be used to iterate through all the values in a list
+    ```python
+    >>>for v in enumerate(nums)
+    >>>    print(v)
+    ```
 ## Objects
 Note: Python indexing begins with 0
 ####Lists
@@ -191,6 +210,17 @@ def myfunc(arg1,arg2):
 If `return` is not used to explicitly return an object, function returns `None`, which is the lack of a value, by default.
 The text bounded by `"""` is known as the docstring. It is used to explain what the function does and how to use it.
 
+### Lambda Functions
+Lambda functions are anonymous functions. Anonymous functions not stored in seperate program file, and can only execute 
+1 statement. Define lamda functions using parentheses and `lambda:`
+```python
+>>>Add = (lambda x,y: x+y) 
+>>>Add(3,4)
+7
+>>> print((lambda x: x**x)(2))
+4
+```
+
 ## Modules
 Import modules using the `import` command at the beginning of the code
 ```python
@@ -247,7 +277,7 @@ ZeroDivisionError: division by zero
 ```
 
 ## File Handling
-#### Opening & Closing
+#### Opening and Closing
 For straightforward text files, use `open` function to create a file object containing data required
 ```python
 myfile = open('file.txt','rb')
@@ -276,5 +306,38 @@ Note: `myfile` is only accessible within `with` block using this method
     ```
 - `.close()` method closes the file object to free up memory.
 
+## Functional Programming 
+### Map
+`map` takes input of a function and an iterable object, and applies the function to every element before returning 
+the a map object. Basically, an iterable mapping. Use conversions to transform the map object.
+```python
+>>>map((lambda x: x+2),[0,1,2,3])
+<map object at 0x05E1B170>
+>>>tuple(map((lambda x: x+2),[0,1,2,3]))
+(2,3,4,5)
+```
 
+### Filter
+`filter` takes input of a predicate(function that returns boolean) and an iterable, and removes elements that do not satisfy
+the predicate.
+```python
+>>>filter((lambda x: x>3),[0,3,4,5])
+<filter object at 0x05E1B170>
+>>>list(filter((lambda x: x>3),[0,3,4,5]))
+[4,5]
+``` 
 
+### Yield
+`yield` can be used in named functions for "lazy"(on demand) generation of several values without stopping the function and destroying the function's 
+local variables. The generated values can be used as iterables, and has no limit since no memory is used to store 
+them. Generated values can be type-converted as well. 
+```python
+def downskiptwo():
+    i = 10
+    while i > 0:
+        yield i
+        i -= 2
+
+>>>print(list(downskiptwo()))
+[10, 8, 6, 4, 2]
+```
