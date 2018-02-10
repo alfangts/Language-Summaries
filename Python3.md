@@ -1,4 +1,6 @@
 # Python 3
+This document follows the content flow of the Sololearn Python 3 module, summarised into a single document.
+
 ## Basics
 1. Arithmetic Operations
     * `+,-,*,/` work as usual in all  programming languages
@@ -340,4 +342,45 @@ def downskiptwo():
 
 >>>print(list(downskiptwo()))
 [10, 8, 6, 4, 2]
+```
+
+### Decorators
+To decorate a function is to alter an already defined function(that you do not wish to modify), through the definition
+ of a seperate function.
+```python
+>>>def decorate(func):
+>>>    def wrap():
+>>>        print('~~~~~~')
+>>>        func()
+>>>        print('~~~~~~')
+>>>    return wrap
+>>>
+>>>def foo():
+>>>    print('I like eggs')
+>>>
+>>>fancy = decorate(foo)
+>>>fancy()
+~~~~~~
+I like eggs
+~~~~~
+```
+Notice that `foo` instead of `foo()` is passed into `decorate`. This changes the argument, and `wrap()` will call `foo` 
+instead of `func`.<br><br>
+Can also use `@` to decorate:
+```python
+>>>def decorate(func):
+>>>    def wrap():
+>>>        print('~~~~~~')
+>>>        func()
+>>>        print('~~~~~~')
+>>>    return wrap
+>>>
+>>>@decorate
+>>>def foo():
+>>>    print('I like eggs')
+>>>
+>>>foo()
+~~~~~~
+I like eggs
+~~~~~
 ```
