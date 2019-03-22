@@ -10,13 +10,13 @@ SQL, or Structure Query Language, is used to communicate with databases. As such
 
 SELECT is one of the fundamental commands of SQL. It tells the database what you're interested in.
 
-For example, suppose we have a table called 'People' containing 3 fields *id*, *name* and *age*
+For example, suppose we have a table called 'People' containing 5 fields *id*, *name*, *age*, *height* and *weight*
 
-| id   | name      | age  |
-| ---- | --------- | ---- |
-| 1    | Katherine | 20   |
-| 2    | Andrew    | 50   |
-| 3    | Andrew    | 43   |
+| id   | name      | age  | height | weight |
+| ---- | --------- | ---- | ------ | ------ |
+| 1    | Katherine | 20   | 160    | 57     |
+| 2    | Andrew    | 50   | 180    | 85     |
+| 3    | Andrew    | 43   | 172    | 98     |
 
 
 
@@ -64,6 +64,14 @@ If we wanted to find out the number of datapoints we had in the table, we can ut
 >>> SELECT COUNT(*)
 >>> FROM people;
 3
+```
+
+To get the count of unique values, we utilize the **DISTINCT** modifier again
+
+```sql
+>>> SELECT COUNT(DISTINCT name)
+>>> FROM people;
+2
 ```
 
 
