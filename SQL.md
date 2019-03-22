@@ -2,7 +2,7 @@
 
 This document will be a summary/cheatsheet of what I've learned about SQL.
 
-SQL, or Structure Query Language, is used to communicate with databases. As such, implementations and use-cases will require interaction with a database. For the purposes of learning, one can install XAMPP (open source software that runs a local Apache server which can then load a mySQL module). Actual datafiles can then be download them from Kaggle or other related websites.
+SQL, or Structure Query Language, is used to communicate with databases. As such, implementations and use-cases will require interaction with a database. For the purposes of learning, one can install XAMPP (open source software that runs a local Apache server which can then load a mySQL module). Actual datafiles can then be downloaded from Kaggle or other related websites.
 
 
 
