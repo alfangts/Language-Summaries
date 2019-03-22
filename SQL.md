@@ -10,7 +10,7 @@ SQL, or Structure Query Language, is used to communicate with databases. As such
 
 SELECT is one of the fundamental commands of SQL. It tells the database what you're interested in.
 
-For example, suppose we have a table called 'People' containing the following:
+For example, suppose we have a table called 'People' containing 3 fields *id*, *name* and *age*
 
 | id   | name      | age  |
 | ---- | --------- | ---- |
@@ -18,7 +18,9 @@ For example, suppose we have a table called 'People' containing the following:
 | 2    | Andrew    | 50   |
 | 3    | Andrew    | 43   |
 
-```mysql
+
+
+```sql
 >>> SELECT name 
 >>> FROM people;
 ```
@@ -30,4 +32,39 @@ will return the column 'name' from the 'People' table
 | Katherine |
 | Andrew    |
 | Andrew    |
+
+Suppose now we wanted their names and their ages. That can be obtained as follows
+
+```sql
+>>> SELECT name, age
+>>> FROM people;
+```
+
+| name      | age  |
+| --------- | ---- |
+| Katherine | 20   |
+| Andrew    | 50   |
+| Andrew    | 43   |
+
+Notice how there are two Andrews in the *names* column? We can query the database for **unique** values only by using the **DISTINCT** modifier.
+
+```sql
+>>> SELECT DISTINCT name
+>>> FROM people;
+```
+
+| name      |
+| --------- |
+| Katherine |
+| Andrew    |
+
+If we wanted to find out the number of datapoints we had in the table, we can utilize the **COUNT()** method
+
+```sql
+>>> SELECT COUNT(*)
+>>> FROM people;
+3
+```
+
+
 
