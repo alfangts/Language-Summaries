@@ -8,7 +8,7 @@ In SQL, a *Statement* is a single command sent to the database to initiate a tra
 
 Each *Statement* must be terminated with a semicolon *;* 
 
-#### Select command
+#### SELECT query
 
 The SELECT query is one of the fundamental clauses of SQL. It tells the database what you're interested in.
 
@@ -80,7 +80,7 @@ result: 2
 
 #### Filtering
 
-The **Where** command can be used to filter records that are quantities, such as ages or years. 
+The **WHERE** command can be used to filter records that are quantities, such as ages or years. 
 
 Using the same database as above, 
 
@@ -144,3 +144,63 @@ result:
 | 3    | Andrew    | 43   | 172    | 98     |
 
 As always, it is good practice to wrap your logic conditions with brackets.
+
+##### Filtering Operators
+
+###### In
+
+In the case where you have several cases, one can utilize the **IN** modifier
+
+```sql
+>>> SELECT name,age
+>>> FROM people
+>>> WHERE age IN (20,50);
+
+```
+| name      | age  |
+| ----------| ---- |
+| Katherine | 20   |
+| Andrew    | 50   |
+
+
+
+##### NULL and IS NULL
+
+**NULL** is the None or NaN equivalent of SQL. To check for NULL values, we use the **IS NULL** expression.
+
+```sql
+>>> SELECT name
+>>> FROM people
+>>> WHERE age IS NOT NULL
+```
+
+Note the addition of the **NOT** expression
+
+
+
+###### LIKE and NOT LIKE
+
+The **LIKE** and **NOT LIKE** expressions are used exclusively for text comparison. They can be used in conjunction with *text wildcards* to account for various text patterns.
+
+| Wildcard | Code example | Accounts for                                                 |
+| -------- | ------------ | ------------------------------------------------------------ |
+| %        | 'B%'         | String starting with the letter 'B' of any length            |
+| _        | '__a'        | String starting with any two characters, and ending with 'a' |
+
+In our table of records,
+
+```sql
+>>> SELECT name
+>>> FROM people
+>>> WHERE name LIKE 'A%';
+result:
+```
+| name      |
+| --------- |
+| Andrew    |
+| Andrew    |
+
+
+
+#### Aggregate Functions
+
